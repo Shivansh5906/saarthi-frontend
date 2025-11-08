@@ -1,0 +1,134 @@
+/* Background */
+.login-bg {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://plus.unsplash.com/premium_photo-1680363254554-d1c63ad8d33d?auto=format&fit=crop&w=1920&q=80")
+    no-repeat center center fixed;
+  background-size: cover;
+  padding: 30px;
+}
+
+/* White Card Box */
+.login-card {
+  width: 380px;
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(10px);
+  padding: 35px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0px 12px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 0.5s ease;
+}
+
+.bank-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #003b73 !important;
+  margin-bottom: 4px;
+}
+
+.bank-subtitle {
+  font-size: 15px;
+  color: #003b73 !important;
+  opacity: 0.85;
+  margin-bottom: 25px;
+}
+
+/* Form inputs */
+.login-form label {
+  display: block;
+  text-align: left;
+  margin-top: 12px;
+  font-weight: 500;
+  color: #003b73;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #b6b6b6;
+  outline: none;
+  font-size: 15px;
+}
+
+.login-form input:focus {
+  border-color: #0054a6;
+}
+
+/* Login Button */
+.login-submit {
+  width: 100%;
+  padding: 13px;
+  margin-top: 22px;
+  background: #0054A6;
+  color: white;
+  font-size: 17px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-submit:hover {
+  background: #003d7a;
+}
+
+/* Links */
+.login-links {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  flex-wrap: wrap; /* ✅ prevents overlap on small screens */
+  gap: 6px;
+}
+
+.login-links a {
+  text-decoration: none;
+  color: #003b73;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.login-links a:hover {
+  color: #0054a6;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ✅ Mobile Responsive */
+@media (max-width: 768px) {
+  .login-card {
+    width: 82%;
+    padding: 28px;
+  }
+  .bank-title {
+    font-size: 34px;
+  }
+  .login-submit {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+/* ✅ Extra Small Phones */
+@media (max-width: 450px) {
+  .login-card {
+    width: 92%;
+    padding: 22px;
+    border-radius: 14px;
+  }
+  .login-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}

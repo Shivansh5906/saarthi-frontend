@@ -1,0 +1,130 @@
+.signup-bg {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://plus.unsplash.com/premium_photo-1680363254554-d1c63ad8d33d?auto=format&fit=crop&w=1920&q=80")
+    no-repeat center center fixed;
+  background-size: cover;
+  padding: 20px;
+}
+
+/* Glass Card */
+.signup-card {
+  width: 420px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 35px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.25);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Title */
+.signup-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: #003b73 !important;
+  margin-bottom: 6px;
+}
+
+.signup-subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: #003b73 !important;
+  opacity: 0.85;
+  margin-bottom: 22px;
+}
+
+/* Inputs */
+.signup-card input,
+.signup-card select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1.5px solid #cccccc;
+  font-size: 1rem;
+  margin-bottom: 14px;
+  transition: 0.3s;
+}
+
+.signup-card input:focus,
+.signup-card select:focus {
+  border-color: #003b73;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 59, 115, 0.4);
+}
+
+/* Button */
+.signup-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #003b73;
+  color: white;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background: #002a52;
+}
+
+/* Footer Links */
+.signup-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;   /* ✅ prevents overflow on small screens */
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.signup-links a {
+  color: #003b73;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signup-links a:hover {
+  text-decoration: underline;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ✅ Responsive: Tablets */
+@media (max-width: 768px) {
+  .signup-card {
+    width: 85%;
+    padding: 28px;
+  }
+  .signup-title {
+    font-size: 28px;
+  }
+  .signup-btn {
+    padding: 12px;
+  }
+}
+
+/* ✅ Extra Small Phones */
+@media (max-width: 450px) {
+  .signup-card {
+    width: 92%;
+    padding: 22px;
+    border-radius: 12px;
+  }
+  .signup-title {
+    font-size: 24px;
+  }
+  .signup-subtitle {
+    font-size: 14px;
+  }
+}

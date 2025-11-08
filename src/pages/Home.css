@@ -1,0 +1,138 @@
+/* FULL BACKGROUND */
+.home-bg {
+  min-height: 100vh;
+  width: 100%;
+  background: url("https://plus.unsplash.com/premium_photo-1680363254554-d1c63ad8d33d?auto=format&fit=crop&w=1920&q=80")
+    no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ✅ NAVBAR */
+.home-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #003b73;
+  padding: 14px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 999;
+  flex-wrap: nowrap; /* default desktop behavior */
+}
+
+.nav-btn {
+  background: #ffd000;
+  color: #000;
+  padding: 10px 26px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #ffb800;
+}
+
+.nav-title {
+  flex-grow: 1;
+}
+
+/* ✅ GLASS EFFECT HEADING BOX */
+.home-glass-box {
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(14px);
+  padding: 35px 60px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  margin-top: 30px;
+}
+
+.bank-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #002b5b;
+  margin-bottom: 8px;
+}
+
+.bank-tagline {
+  color: #1a1a1a;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* ✅ SERVICES SECTION */
+.home-services {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.service-card {
+  width: 260px;
+  background: rgba(255,255,255,0.85);
+  padding: 22px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.20);
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+}
+
+/* ✅ RESPONSIVE FIXES */
+@media(max-width: 768px) {
+
+  /* Navbar becomes compact and centered */
+  .home-navbar {
+    padding: 10px 8px;
+    gap: 10px;
+    flex-wrap: wrap; /* ✅ Buttons will fit automatically */
+  }
+
+  .nav-btn {
+    padding: 8px 16px;
+    flex-shrink: 0; /* Prevents text squeezing */
+  }
+
+  /* Center Title box */
+  .home-glass-box {
+    width: 90%;
+    padding: 26px 20px;
+  }
+
+  .bank-title { font-size: 34px; }
+  .bank-tagline { font-size: 17px; }
+
+  /* Service cards scale to screen */
+  .service-card {
+    width: 90%;
+  }
+
+}
+
+/* Extra small phones */
+@media(max-width: 480px) {
+  .nav-btn {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+
+  .bank-title { font-size: 28px; }
+  .bank-tagline { font-size: 15px; }
+}

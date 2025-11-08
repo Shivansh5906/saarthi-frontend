@@ -1,0 +1,154 @@
+.history-bg {
+  min-height: 100vh;
+  background: url("https://plus.unsplash.com/premium_photo-1680363254554-d1c63ad8d33d?auto=format&fit=crop&w=1920&q=80")
+    no-repeat center center fixed;
+  background-size: cover;
+  padding-top: 120px; /* ✅ So it doesn't hide under navbar */
+  font-family: "Poppins", sans-serif;
+}
+
+/* MAIN CARD */
+.history-container {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  width: 75%;
+  margin: auto;
+  padding: 28px 40px;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  animation: fadeIn 0.7s ease;
+}
+
+.history-container h2 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 20px;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+/* TABLE WRAPPER (Prevents overflow) */
+.history-table-wrapper {
+  width: 100%;
+  overflow-x: auto;   /* ✅ Phone pe table scroll hoga, break nahi karega */
+}
+
+/* TABLE */
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;   /* ✅ Ensures proper layout on small screens */
+  background: rgba(255,255,255,0.6);
+  border-radius: 10px;
+}
+
+.history-table th {
+  background: rgba(0, 51, 102, 0.85);
+  color: white;
+  padding: 14px;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap; /* ✅ No text wrapping in headers */
+}
+
+.history-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  color: #003366;
+  font-weight: 500;
+}
+
+/* Hover Row Highlight */
+.history-table tr:hover {
+  background: rgba(255,255,255,0.85);
+  transition: 0.3s;
+}
+
+/* BADGES */
+.badge {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badge-deposit {
+  background: #e6ffee;
+  color: #008f3f;
+}
+
+.badge-withdraw {
+  background: #ffe6e6;
+  color: #cc0000;
+}
+
+.badge-transfer {
+  background: #e6f0ff;
+  color: #0055cc;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ✅ RESPONSIVE FIXES */
+@media (max-width: 992px) {
+  .history-container {
+    width: 85%;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .history-container {
+    width: 92%;
+    padding: 18px;
+  }
+
+  .history-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .history-table th,
+  .history-table td {
+    font-size: 0.85rem;
+  }
+}
+/* --- HEADER & DOWNLOAD BUTTON --- */
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.download-btn {
+  background: #003366;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background: #ffd700;
+  color: #003366;
+}
+
+/* ✅ Mobile */
+@media (max-width: 600px) {
+  .history-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .download-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

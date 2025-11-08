@@ -1,0 +1,32 @@
+.contact-wrapper {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f5f6fa;
+  min-height: 100vh;
+}
+
+.contact-intro {
+  margin-top: 10px;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.contact-card {
+  width: 420px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+  text-align: left;
+}
+
+.contact-card h3 {
+  color: #003366;
+  margin-top: 18px;
+}
+
+.contact-card p {
+  margin: 5px 0 12px;
+  color: #333;
+}
