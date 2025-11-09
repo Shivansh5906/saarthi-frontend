@@ -10,4 +10,4 @@ export default function PrivateRoute({ children }) {
 
   // ❌ No token → redirect to login
   return <Navigate to="/login" replace />;
-}  iss code se dashboard safe rahega ? 
+}  
