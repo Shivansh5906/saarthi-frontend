@@ -1,11 +1,13 @@
 import { Navigate } from "react-router-dom";
 
 export default function PrivateRoute({ children }) {
-  const token = localStorage.getItem("token"); // ✅ token read
+  const token = localStorage.getItem("token");
 
-  if (!token) {
-    return <Navigate to="/login" replace />; // ✅ correct redirect
+  // ✅ If token exists → allow dashboard
+  if (token && token.startsWith("Bearer ")) {
+    return children;
   }
 
-  return children; // ✅ allow dashboard
-}
+  // ❌ No token → redirect to login
+  return <Navigate to="/login" replace />;
+}  iss code se dashboard safe rahega ? 
