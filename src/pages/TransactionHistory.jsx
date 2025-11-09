@@ -17,12 +17,24 @@ export default function TransactionHistory() {
     loadTransactions();
   }, []);
 
-  // ✅ PDF Download Function
- const downloadPdf = () => {
-  const token = localStorage.getItem("token");
-  window.open(`https://saarthi-bank-backend-production.up.railway.app/user/transactions/pdf?token=${token}`, "_blank");
-};
+  // ✅ Correct PDF Download (Token auto attaches via Axios interceptor)
+  const downloadPdf = async () => {
+    try {
+      const response = await api.get("/user/transactions/pdf", {
+        responseType: "blob",
+      });
 
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "Transaction_History.pdf");
+      document.body.appendChild(link);
+      link.click();
+    } catch (error) {
+      alert("❌ Failed to download PDF");
+      console.log(error);
+    }
+  };
 
   if (transactions.length === 0)
     return (
@@ -35,7 +47,6 @@ export default function TransactionHistory() {
     <div className="history-bg">
       <div className="history-container">
 
-        {/* ✅ Header + Download Button */}
         <div className="history-header">
           <h2>📜 Transaction History</h2>
           <button className="download-btn" onClick={downloadPdf}>
@@ -49,7 +60,7 @@ export default function TransactionHistory() {
               <tr>
                 <th>Type</th>
                 <th>Amount (₹)</th>
-                <th>Details</th>
+                <th>From → To</th>
                 <th>Date & Time</th>
               </tr>
             </thead>
@@ -64,7 +75,9 @@ export default function TransactionHistory() {
                           ? "badge badge-deposit"
                           : tx.type === "WITHDRAW"
                           ? "badge badge-withdraw"
-                          : "badge badge-transfer"
+                          : tx.type === "TRANSFER"
+                          ? "badge badge-transfer"
+                          : "badge badge-received"
                       }
                     >
                       {tx.type}
@@ -72,7 +85,11 @@ export default function TransactionHistory() {
                   </td>
 
                   <td>₹ {tx.amount}</td>
-                  <td>{tx.details || "-"}</td>
+
+                  <td>
+                    {tx.fromAccount} → {tx.toAccount}
+                  </td>
+
                   <td>{new Date(tx.timestamp).toLocaleString()}</td>
                 </tr>
               ))}
