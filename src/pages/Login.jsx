@@ -12,16 +12,17 @@ export default function Login() {
 
     try {
       const response = await api.post("/auth/login", {
-        email: form.email.trim().toLowerCase(),   // ✅ email normalize
-        password: form.password
-      });
+  email: form.email.trim().toLowerCase(),
+  password: form.password
+});
 
-      const token = response.data; // ✅ backend returns token only
+const token = response.data.token; // ✅ extract token
 
-      localStorage.setItem("token", `Bearer ${token}`); // ✅ store correctly
+localStorage.setItem("token", `Bearer ${token}`); // ✅ store token
 
-      alert("✅ Login Successful!");
-      navigate("/dashboard");
+alert("✅ Login Successful!");
+navigate("/dashboard");
+
 
     } catch (err) {
       alert("❌ " + (err.response?.data?.message || "Incorrect Email or Password!"));
