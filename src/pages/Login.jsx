@@ -7,27 +7,24 @@ export default function Login() {
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: "", password: "" });
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+ const handleLogin = async (e) => {
+  e.preventDefault();
 
-    try {
-      const response = await api.post("/auth/login", form);
+  try {
+    const response = await api.post("/auth/login", form);
 
-      const token = response.data.split("Token: ")[1];
+    const token = response.data; // ✅ backend returns token directly
 
-      if (!token) {
-        alert("❌ User Not Found");
-        return;
-      }
+    localStorage.setItem("token", token);
 
-      localStorage.setItem("token", token);
-      alert("✅ Login Successful!");
-      navigate("/dashboard");
+    alert("✅ Login Successful!");
+    navigate("/dashboard");
 
-    } catch (err) {
-      alert("❌ Incorrect Email or Password!");
-    }
-  };
+  } catch (err) {
+    alert("❌ " + (err.response?.data?.message || "Incorrect Email or Password!"));
+  }
+};
+
 
   return (
     <div className="login-bg">
