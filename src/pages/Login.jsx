@@ -7,24 +7,26 @@ export default function Login() {
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: "", password: "" });
 
- const handleLogin = async (e) => {
-  e.preventDefault();
+  const handleLogin = async (e) => {
+    e.preventDefault();
 
-  try {
-    const response = await api.post("/auth/login", form);
+    try {
+      const response = await api.post("/auth/login", {
+        email: form.email.trim().toLowerCase(),   // ✅ email normalize
+        password: form.password
+      });
 
-    const token = response.data; // ✅ backend returns token directly
+      const token = response.data; // ✅ backend returns token only
 
-    localStorage.setItem("token", token);
+      localStorage.setItem("token", `Bearer ${token}`); // ✅ store correctly
 
-    alert("✅ Login Successful!");
-    navigate("/dashboard");
+      alert("✅ Login Successful!");
+      navigate("/dashboard");
 
-  } catch (err) {
-    alert("❌ " + (err.response?.data?.message || "Incorrect Email or Password!"));
-  }
-};
-
+    } catch (err) {
+      alert("❌ " + (err.response?.data?.message || "Incorrect Email or Password!"));
+    }
+  };
 
   return (
     <div className="login-bg">
@@ -55,7 +57,6 @@ export default function Login() {
 
         <div className="login-links">
           <Link to="/signup">Create Account</Link>
-         
         </div>
 
       </div>
