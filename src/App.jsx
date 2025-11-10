@@ -9,6 +9,7 @@ import Withdraw from "./pages/Withdraw";
 import Transfer from "./pages/Transfer";
 import TransactionHistory from "./pages/TransactionHistory";
 import Home from "./pages/Home";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (

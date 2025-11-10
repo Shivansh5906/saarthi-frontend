@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import api from "../api/apiClient";
+import { useNavigate } from "react-router-dom";
+import Sidebar from "../components/Sidebar";
 import "./Dashboard.css";
-import { useNavigate, Link } from "react-router-dom";
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
@@ -23,46 +24,29 @@ export default function Dashboard() {
   if (!user) return <h2>Loading...</h2>;
 
   return (
-    <div className="dashboard-bg">
-<nav className="navbar">
+    <div className="dashboard-layout">
 
-  <div className="nav-left">
-    <Link to="/" className="logo">SAARTHI BANK</Link>
-  </div>
+      <Sidebar />
 
-  <div className="nav-center">
-    <ul className="nav-links">
-     
-      <li><Link to="/history">Transaction History</Link></li>
-      <li><Link to="/profile">Profile</Link></li>
-    </ul>
-  </div>
+      <div className="dashboard-content">
 
- 
+        {/* Balance Card */}
+        <div className="balance-card">
+          <div className="balance-label">Total Balance</div>
+          <div className="balance-amount">₹ {user.balance.toLocaleString()}</div>
 
-</nav>
-
-   
-
-    
-       
-
-      {/* ✅ WELCOME BOX */}
-      <div className="welcome-box">
-        <h1>Welcome {user.name}</h1>
-      </div>
-
-      {/* ACCOUNT CARD */}
-      <div className="account-card">
-        <h3>Account Balance</h3>
-        <h1>₹ {user.balance.toLocaleString()}</h1>
-        <p>Savings Account • {user.accountNumber}</p>
-
-        <div className="actions">
-          <button className="action-btn" onClick={() => navigate("/deposit")}>Deposit</button>
-          <button className="action-btn" onClick={() => navigate("/withdraw")}>Withdraw</button>
-          <button className="action-btn" onClick={() => navigate("/transfer")}>Transfer</button>
+          <div className="balance-number">
+            Savings • {user.accountNumber}
+          </div>
         </div>
+
+        {/* Action Buttons */}
+        <div className="action-grid">
+          <button className="action-item" onClick={() => navigate("/deposit")}>➕ Deposit</button>
+          <button className="action-item" onClick={() => navigate("/withdraw")}>➖ Withdraw</button>
+          <button className="action-item" onClick={() => navigate("/transfer")}>💸 Transfer</button>
+        </div>
+
       </div>
     </div>
   );
