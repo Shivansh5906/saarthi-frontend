@@ -37,11 +37,25 @@ export default function Dashboard() {
         </div>
 
         {/* Action Buttons */}
-        <div className="action-grid">
-          <button className="action-item" onClick={() => navigate("/deposit")}>➕ Deposit</button>
-          <button className="action-item" onClick={() => navigate("/withdraw")}>➖ Withdraw</button>
-          <button className="action-item" onClick={() => navigate("/transfer")}>💸 Transfer</button>
-        </div>
+       <div className="feature-grid">
+
+  <div className="feature-card" onClick={() => navigate("/deposit")}>
+    <img src="https://cdn-icons-png.flaticon.com/512/833/833524.png" alt="" />
+    <h3>Deposit Money</h3>
+  </div>
+
+  <div className="feature-card" onClick={() => navigate("/withdraw")}>
+    <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="" />
+    <h3>Withdraw Cash</h3>
+  </div>
+
+  <div className="feature-card" onClick={() => navigate("/transfer")}>
+    <img src="https://cdn-icons-png.flaticon.com/512/2980/2980283.png" alt="" />
+    <h3>Transfer Funds</h3>
+  </div>
+
+</div>
+
 
       </div>
     </div>

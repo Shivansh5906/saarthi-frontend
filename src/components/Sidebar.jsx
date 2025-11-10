@@ -15,7 +15,7 @@ export default function Sidebar() {
 
   return (
     <div className="sidebar">
-      <div className="sidebar-logo">Ｓ</div>
+     
 
       <ul className="sidebar-menu">
         {menu.map((item) => (
