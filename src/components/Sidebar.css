@@ -1,6 +1,6 @@
 .sidebar {
   width: 70px;
-  background: #ffffff;
+  background: transparent;
   border-right: 1px solid #eee;
   height: 100vh;
   position: fixed;
@@ -53,3 +53,5 @@
 .sidebar-menu li:hover .tooltip {
   opacity: 1;
 }
+
+

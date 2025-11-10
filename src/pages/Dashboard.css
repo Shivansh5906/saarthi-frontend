@@ -1,4 +1,8 @@
 /* =============== MAIN LAYOUT & BACKGROUND =============== */
+html, body, #root {
+  background: transparent !important;
+}
+
 .dashboard-layout {
   display: flex;
   height: 100vh;
@@ -33,7 +37,9 @@
   flex: 1;
   padding: 60px 70px;
   overflow-y: auto;
+  background: transparent !important; /* ✅ remove white layer */
 }
+
 
 
 /* =============== BALANCE CARD (YONO + NEO STYLE) =============== */
