@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import "./Sidebar.css";
 
 export default function Sidebar() {
-  const { pathname } = useLocation();
+  const navigate = useNavigate(); 
 
   const menu = [
     { to: "/dashboard", icon: "🏠", label: "Home" },
