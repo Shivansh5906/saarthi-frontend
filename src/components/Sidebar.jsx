@@ -1,5 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import "./Sidebar.css";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Sidebar() {
   const navigate = useNavigate(); 
