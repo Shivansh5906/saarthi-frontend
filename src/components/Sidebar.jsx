@@ -13,20 +13,26 @@ export default function Sidebar() {
     { to: "/profile", icon: "👤", label: "Profile" },
   ];
 
+ 
   return (
-    <div className="sidebar">
-     
+    <>
+      {/* Desktop Sidebar */}
+      <div className="sidebar desktop-sidebar">
+        <div className="menu-item" onClick={() => navigate("/dashboard")}>🏠</div>
+        <div className="menu-item" onClick={() => navigate("/deposit")}>➕</div>
+        <div className="menu-item" onClick={() => navigate("/withdraw")}>➖</div>
+        <div className="menu-item" onClick={() => navigate("/transfer")}>💸</div>
+        <div className="menu-item" onClick={() => navigate("/profile")}>👤</div>
+      </div>
 
-      <ul className="sidebar-menu">
-        {menu.map((item) => (
-          <li key={item.to} className={pathname === item.to ? "active" : ""}>
-            <Link to={item.to}>
-              <span className="icon">{item.icon}</span>
-            </Link>
-            <span className="tooltip">{item.label}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+      {/* Mobile Bottom Navbar */}
+      <div className="mobile-navbar">
+        <div onClick={() => navigate("/dashboard")}>🏠</div>
+        <div onClick={() => navigate("/deposit")}>➕</div>
+        <div onClick={() => navigate("/withdraw")}>➖</div>
+        <div onClick={() => navigate("/transfer")}>💸</div>
+        <div onClick={() => navigate("/profile")}>👤</div>
+      </div>
+    </>
   );
 }
