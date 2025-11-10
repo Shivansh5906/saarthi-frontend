@@ -40,7 +40,7 @@ export default function Dashboard() {
        <div className="feature-grid">
 
   <div className="feature-card" onClick={() => navigate("/deposit")}>
-    <img src="https://cdn-icons-png.flaticon.com/512/833/833524.png" alt="" />
+    <img src="/assets/deposit.png" alt="Deposit" />
     <h3>Deposit Money</h3>
   </div>
 
