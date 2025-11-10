@@ -1,119 +1,100 @@
-/* ----------- LAYOUT ----------- */
+/* --- LAYOUT --- */
 .dashboard-layout {
   display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #f7f9ff, #fff);
+  font-family: "Poppins", sans-serif;
 }
 
+/* --- CONTENT WRAPPER --- */
 .dashboard-content {
-  margin-left: 85px;
-  padding: 30px;
-  min-height: 100vh;
-  width: 100%;
-  background: url("https://plus.unsplash.com/premium_photo-1680363254554-d1c63ad8d33d?auto=format&fit=crop&w=1920&q=80")
-    no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
+  flex: 1;
+  padding: 60px 70px;
+  overflow-y: auto;
 }
 
-.dashboard-content::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  backdrop-filter: blur(14px) saturate(160%);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  background: rgba(255,255,255,0.55);
-}
-
-/* ---------- BALANCE CARD (GLASS) ---------- */
+/* --- GLASS BALANCE CARD --- */
 .balance-card {
-  position: relative;
-  z-index: 2;
   width: 100%;
-  max-width: 480px;
-  padding: 28px;
+  max-width: 650px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(18px);
   border-radius: 22px;
-
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
-  color: #ffffffee;
-  margin-bottom: 30px;
-  animation: fadeIn 0.8s ease;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  margin-bottom: 40px;
+  animation: fadeIn 0.6s ease;
 }
 
 .balance-label {
-  font-size: 14px;
-  opacity: 0.9;
+  font-size: 15px;
+  color: #4a4a4a;
+  font-weight: 500;
 }
 
 .balance-amount {
-  font-size: 46px;
+  font-size: 42px;
   font-weight: 700;
-  margin-top: 6px;
+  margin-top: 8px;
+  background: linear-gradient(45deg, #6a00ff, #b44cff);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .balance-number {
-  margin-top: 10px;
+  margin-top: 6px;
+  color: #555;
   font-size: 14px;
-  opacity: 0.9;
 }
 
-/* ---------- ACTION BUTTON GRID ---------- */
+/* --- ACTION BUTTONS WRAPPER --- */
 .action-grid {
-  position: relative;
-  z-index: 2;
   display: flex;
-  gap: 15px;
-  margin-top: 12px;
+  gap: 25px;
+  max-width: 650px;
+  flex-wrap: wrap;
 }
 
+/* --- BUTTON STYLE --- */
 .action-item {
   flex: 1;
+  min-width: 160px;
   padding: 16px;
   border-radius: 14px;
   border: none;
-  background: #ffffffdd;
+  background: white;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   font-size: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
   cursor: pointer;
   font-weight: 600;
-  transition: 0.3s;
-  color: #111;
+  transition: 0.35s;
 }
 
 .action-item:hover {
-  transform: translateY(-3px);
-  color: #5a00ff;
-  box-shadow: 0 8px 22px rgba(90,0,255,0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 22px rgba(103, 0, 255, 0.25);
+  background: linear-gradient(90deg, #6a00ff, #b44cff);
+  color: white;
 }
 
-/* ---------- ANIMATION ---------- */
+/* --- SIMPLE FADE ANIMATION --- */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(25px); }
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ---------- RESPONSIVE DESIGN ---------- */
-@media(max-width: 768px) {
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
   .dashboard-content {
-    margin-left: 70px;
-    padding: 18px;
+    padding: 40px 20px;
   }
 
-  .balance-amount {
-    font-size: 34px;
+  .balance-card {
+    max-width: 100%;
   }
 
   .action-grid {
     flex-direction: column;
-  }
-}
-
-@media(max-width: 480px) {
-  .dashboard-content {
-    margin-left: 0;
-    padding: 16px;
   }
 }
