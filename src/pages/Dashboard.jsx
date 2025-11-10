@@ -3,6 +3,7 @@ import api from "../api/apiClient";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import "./Dashboard.css";
+import depositImg from "../assets/deposit.png";
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
