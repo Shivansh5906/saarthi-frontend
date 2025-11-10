@@ -1,4 +1,4 @@
-/* --- LAYOUT WITH BACKGROUND IMAGE --- */
+/* =============== MAIN LAYOUT & BACKGROUND =============== */
 .dashboard-layout {
   display: flex;
   height: 100vh;
@@ -7,18 +7,18 @@
   overflow: hidden;
 }
 
-/* Background Image (full screen) */
+/* Background Image Layer */
 .dashboard-layout::before {
   content: "";
   position: absolute;
   inset: 0;
   background: url("https://plus.unsplash.com/premium_photo-1680363254554-d1c63ad8d33d?auto=format&fit=crop&w=1920&q=80")
     no-repeat center center / cover;
-  filter: brightness(0.75) blur(3px);   /* ✅ Elegant soft blur */
-  z-index: -1;
+  filter: brightness(0.75) blur(4px);
+  z-index: -2;
 }
 
-/* White Glow Overlay (gives premium softness) */
+/* White Frost Overlay */
 .dashboard-layout::after {
   content: "";
   position: absolute;
@@ -28,90 +28,99 @@
   z-index: -1;
 }
 
-/* --- CONTENT WRAPPER --- */
+/* Content Area */
 .dashboard-content {
   flex: 1;
   padding: 60px 70px;
   overflow-y: auto;
 }
 
-/* --- GLASS BALANCE CARD --- */
+
+/* =============== BALANCE CARD (YONO + NEO STYLE) =============== */
 .balance-card {
   width: 100%;
-  max-width: 650px;
-  padding: 32px;
-  background: rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(18px);
-  border-radius: 22px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  margin-bottom: 40px;
+  max-width: 700px;
+  padding: 34px;
+  border-radius: 26px;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(135deg, #6a00ff 0%, #b755ff 50%, #ffb7ff 100%);
+  box-shadow: 0 18px 45px rgba(106, 0, 255, 0.35);
+  border: none;
+  margin-bottom: 48px;
   animation: fadeIn 0.6s ease;
+  color: white;
 }
 
 .balance-label {
-  font-size: 15px;
-  color: white;
+  font-size: 16px;
+  opacity: 0.95;
   font-weight: 500;
 }
 
 .balance-amount {
-  font-size: 42px;
-  font-weight: 700;
+  font-size: 48px;
+  font-weight: 800;
   margin-top: 8px;
-  background: linear-gradient(45deg, #ffdd00, #ffffff);
-  -webkit-background-clip: text;
-  color: transparent;
+  letter-spacing: 1px;
 }
 
 .balance-number {
-  margin-top: 6px;
-  color: #e6e6e6;
-  font-size: 14px;
+  margin-top: 10px;
+  font-size: 15px;
+  opacity: 0.9;
 }
 
-/* --- ACTION BUTTONS GRID --- */
+
+/* =============== ACTION BUTTONS =============== */
 .action-grid {
   display: flex;
   gap: 25px;
-  max-width: 650px;
+  max-width: 700px;
   flex-wrap: wrap;
 }
 
-/* --- BUTTON STYLE --- */
 .action-item {
   flex: 1;
   min-width: 160px;
   padding: 16px;
   border-radius: 14px;
   border: none;
-  background: rgba(255,255,255,0.35);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
   font-size: 16px;
   cursor: pointer;
   font-weight: 600;
-  color: #ffffff;
+  color: #4a4a4a;
   transition: 0.35s;
 }
 
 .action-item:hover {
   transform: translateY(-4px);
-  background: linear-gradient(90deg, #6a00ff, #b44cff);
-  box-shadow: 0 14px 28px rgba(103,0,255,0.35);
+  background: linear-gradient(135deg, #6a00ff, #b755ff);
+  box-shadow: 0 16px 34px rgba(106,0,255,0.35);
+  color: white;
 }
 
-/* --- SMOOTH APPEAR ANIMATION --- */
+
+/* =============== ANIMATION =============== */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- RESPONSIVE --- */
+
+/* =============== RESPONSIVE =============== */
 @media (max-width: 768px) {
   .dashboard-content {
-    padding: 40px 20px;
+    padding: 35px 20px;
   }
-  .balance-card { max-width: 100%; }
-  .action-grid { flex-direction: column; }
+
+  .balance-card {
+    max-width: 100%;
+  }
+
+  .action-grid {
+    flex-direction: column;
+  }
 }
