@@ -1,223 +1,119 @@
-.dashboard-bg {
+/* ----------- LAYOUT ----------- */
+.dashboard-layout {
+  display: flex;
+}
+
+.dashboard-content {
+  margin-left: 85px;
+  padding: 30px;
   min-height: 100vh;
+  width: 100%;
   background: url("https://plus.unsplash.com/premium_photo-1680363254554-d1c63ad8d33d?auto=format&fit=crop&w=1920&q=80")
     no-repeat center center fixed;
   background-size: cover;
-  font-family: "Poppins", sans-serif;
-  padding-top: 120px;
+  position: relative;
 }
 
-/* ---------------- NAVBAR ---------------- */
-.navbar {
-  background: rgba(0, 51, 102, 0.90);
-  backdrop-filter: blur(10px);
-  color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
+.dashboard-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  background: rgba(255,255,255,0.55);
+}
+
+/* ---------- BALANCE CARD (GLASS) ---------- */
+.balance-card {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  padding: 14px 48px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  flex-wrap: nowrap; /* Desktop default */
-}
+  max-width: 480px;
+  padding: 28px;
+  border-radius: 22px;
 
-.nav-left, .nav-center, .nav-right {
-  display: flex;
-  align-items: center;
-}
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
 
-.nav-center {
-  flex: 1;
-  justify-content: center;
-}
-
-.nav-right {
-  justify-content: flex-end;
-}
-
-/* Logo */
-.logo {
-  background: transparent;
-  border: none;
-  font-size: 20px;
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-/* Nav Links */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 32px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.nav-links li a:hover {
-  color: #ffd700;
-}
-
-/* Logout Button */
-.logout-btn {
-  background: #ff4747;
-  border: none;
-  padding: 9px 20px;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.logout-btn:hover {
-  background: #e00000;
-}
-
-/* Prevent overflow */
-.navbar * {
-  flex-shrink: 0;
-}
-
-/* ---------------- WELCOME BOX ---------------- */
-.welcome-box {
-  background: rgba(255,255,255,0.25);
-  backdrop-filter: blur(14px);
-  width: fit-content;
-  padding: 18px 50px;
-  margin: auto;
-  border-radius: 14px;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.25);
-  text-align: center;
-  animation: fadeIn 0.7s ease;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  color: #ffffffee;
   margin-bottom: 30px;
+  animation: fadeIn 0.8s ease;
 }
 
-.welcome-box h1 {
-  font-size: 2.4rem;
+.balance-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.balance-amount {
+  font-size: 46px;
   font-weight: 700;
-  color: #003366;
-  margin: 0;
+  margin-top: 6px;
 }
 
-/* ---------------- MAIN ACCOUNT CARD ---------------- */
-.account-card {
-  background: rgba(255,255,255,0.25);
-  backdrop-filter: blur(14px);
-  width: 48%;
-  padding: 35px;
-  margin: auto;
-  border-radius: 14px;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.25);
-  text-align: center;
-  animation: fadeIn 0.9s ease;
-}
-
-.account-card h2 {
-  color: #003366;
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-.account-card h1 {
-  color: #003366;
-  font-size: 2.6rem;
-  margin-top: 8px;
-}
-
-.account-card p {
-  color: #00264d;
+.balance-number {
   margin-top: 10px;
-  font-weight: 500;
+  font-size: 14px;
+  opacity: 0.9;
 }
 
-/* ---------------- ACTION BUTTONS ---------------- */
-.actions {
-  margin-top: 30px;
+/* ---------- ACTION BUTTON GRID ---------- */
+.action-grid {
+  position: relative;
+  z-index: 2;
   display: flex;
-  justify-content: center;
-  gap: 22px;
+  gap: 15px;
+  margin-top: 12px;
 }
 
-.action-btn {
-  background: #ffd700;
-  color: #003366;
+.action-item {
+  flex: 1;
+  padding: 16px;
+  border-radius: 14px;
   border: none;
-  padding: 13px 32px;
-  border-radius: 8px;
-  font-weight: 600;
+  background: #ffffffdd;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
   cursor: pointer;
+  font-weight: 600;
   transition: 0.3s;
-  font-size: 1rem;
+  color: #111;
 }
 
-.action-btn:hover {
-  background: #ffeb3b;
+.action-item:hover {
+  transform: translateY(-3px);
+  color: #5a00ff;
+  box-shadow: 0 8px 22px rgba(90,0,255,0.25);
 }
 
-/* ---------------- Animations ---------------- */
+/* ---------- ANIMATION ---------- */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(25px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ✅✅✅ RESPONSIVE FIXES FOR MOBILE ✅✅✅ */
+/* ---------- RESPONSIVE DESIGN ---------- */
 @media(max-width: 768px) {
-
-  .navbar {
-    padding: 12px 16px;
-    flex-wrap: wrap;       /* ✅ Allow items to move to next line if needed */
-    justify-content: center;
-    gap: 10px;
+  .dashboard-content {
+    margin-left: 70px;
+    padding: 18px;
   }
 
-  .nav-center {
-    order: -1;            /* ✅ Bank logo moves to top center */
+  .balance-amount {
+    font-size: 34px;
   }
 
-  .nav-links {
-    gap: 18px;
-  }
-
-  .logout-btn {
-    padding: 7px 14px;
-    font-size: 14px;
-  }
-
-  .welcome-box h1 {
-    font-size: 1.8rem;
-  }
-
-  .account-card {
-    width: 90%;           /* ✅ Perfect mobile scaling */
-    padding: 24px;
-  }
-
-  .actions {
+  .action-grid {
     flex-direction: column;
-    gap: 14px;
-  }
-
-  .action-btn {
-    width: 100%;
   }
 }
 
-/* Extra small phones */
 @media(max-width: 480px) {
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
+  .dashboard-content {
+    margin-left: 0;
+    padding: 16px;
   }
 }
