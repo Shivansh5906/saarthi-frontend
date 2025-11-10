@@ -25,19 +25,15 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-layout">
-
       <Sidebar />
 
       <div className="dashboard-content">
 
-        {/* Balance Card */}
+        {/* Glass Balance Card */}
         <div className="balance-card">
           <div className="balance-label">Total Balance</div>
           <div className="balance-amount">₹ {user.balance.toLocaleString()}</div>
-
-          <div className="balance-number">
-            Savings • {user.accountNumber}
-          </div>
+          <div className="balance-number">Savings • {user.accountNumber}</div>
         </div>
 
         {/* Action Buttons */}
