@@ -41,7 +41,7 @@ export default function Dashboard() {
        <div className="feature-grid">
 
   <div className="feature-card" onClick={() => navigate("/deposit")}>
-    <img src="{depositImg}" alt="Deposit" />
+    <img src={depositImg} alt="Deposit" />
     <h3>Deposit Money</h3>
   </div>
 
