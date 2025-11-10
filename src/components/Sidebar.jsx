@@ -7,7 +7,7 @@ export default function Sidebar() {
   const navigate = useNavigate(); 
 
   const menu = [
-    { to: "/dashboard", icon: "🏠", label: "Home" },
+    { to: "/login", icon: "🏠", label: "Home" },
     { to: "/deposit", icon: "➕", label: "Deposit" },
     { to: "/withdraw", icon: "➖", label: "Withdraw" },
     { to: "/transfer", icon: "💸", label: "Transfer" },
@@ -29,7 +29,7 @@ export default function Sidebar() {
 
       {/* Mobile Bottom Navbar */}
       <div className="mobile-navbar">
-        <div onClick={() => navigate("/dashboard")}>🏠</div>
+        <div onClick={() => navigate("/home")}>🏠</div>
         <div onClick={() => navigate("/deposit")}>➕</div>
         <div onClick={() => navigate("/withdraw")}>➖</div>
         <div onClick={() => navigate("/transfer")}>💸</div>
