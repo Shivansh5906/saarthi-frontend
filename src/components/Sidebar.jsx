@@ -8,9 +8,8 @@ export default function Sidebar() {
 
   const menu = [
     { to: "/login", icon: "🏠", label: "Home" },
-    { to: "/deposit", icon: "➕", label: "Deposit" },
-    { to: "/withdraw", icon: "➖", label: "Withdraw" },
-    { to: "/transfer", icon: "💸", label: "Transfer" },
+    
+
     { to: "/transactions", icon: "📄", label: "History" },
     { to: "/profile", icon: "👤", label: "Profile" },
   ];
@@ -23,6 +22,7 @@ export default function Sidebar() {
         <div className="menu-item" onClick={() => navigate("/dashboard")}>🏠</div>
         <div className="menu-item" onClick={() => navigate("/deposit")}>➕</div>
         <div className="menu-item" onClick={() => navigate("/withdraw")}>➖</div>
+        <div className="menu-item" onClick={() => navigate("/transactions")}>📄</div>
         <div className="menu-item" onClick={() => navigate("/transfer")}>💸</div>
         <div className="menu-item" onClick={() => navigate("/profile")}>👤</div>
       </div>
@@ -30,6 +30,7 @@ export default function Sidebar() {
       {/* Mobile Bottom Navbar */}
       <div className="mobile-navbar">
         <div onClick={() => navigate("/home")}>🏠</div>
+       <div onClick ={()=> navigate("/transactions")}>📄</div> 
         <div onClick={() => navigate("/deposit")}>➕</div>
         <div onClick={() => navigate("/withdraw")}>➖</div>
         <div onClick={() => navigate("/transfer")}>💸</div>
