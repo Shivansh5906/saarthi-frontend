@@ -5,81 +5,86 @@ html, body, #root {
   background: transparent !important;
   font-family: "Poppins", sans-serif;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-/* =============== LAYOUT =============== */
+/* =============== DASHBOARD LAYOUT =============== */
 .dashboard-layout {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Background Image (same vibe as login) */
+/* =============== BACKGROUND IMAGE (Same as Deposit Page) =============== */
 .dashboard-layout::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("https://images.unsplash.com/photo-1612831662375-295c1003d3c0?auto=format&fit=crop&w=1920&q=80")
+  background: url("https://plus.unsplash.com/premium_photo-1680363254554-d1c63ad8d33d?auto=format&fit=crop&w=1920&q=80")
     no-repeat center center / cover;
-  filter: brightness(0.7);
+  filter: brightness(0.75);
   z-index: -2;
 }
 
-/* Frosted Glass Overlay */
+/* Glass Overlay */
 .dashboard-layout::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
   z-index: -1;
 }
 
-/* =============== CONTENT AREA =============== */
+/* =============== MAIN CONTENT AREA =============== */
 .dashboard-content {
-  width: 90%;
-  max-width: 900px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 24px;
-  padding: 50px 60px;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-  color: #fff;
-  text-align: center;
+  flex: 1;
+  padding: 50px 40px;
   overflow-y: auto;
-  animation: fadeIn 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* =============== BALANCE CARD =============== */
 .balance-card {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  padding: 30px;
-  margin-bottom: 40px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  color: white;
+  width: 100%;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  padding: 30px 40px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  backdrop-filter: blur(8px);
+  color: #001f4d;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  animation: fadeIn 0.6s ease;
+  margin-bottom: 50px;
 }
 
 .balance-label {
   font-size: 18px;
+  font-weight: 500;
+  color: #002b63;
   opacity: 0.9;
 }
 
 .balance-amount {
   font-size: 42px;
   font-weight: 800;
-  margin: 10px 0;
-  color: white;
+  color: #002b63;
+  margin-top: 10px;
+  word-break: break-word;
 }
 
 .balance-number {
-  font-size: 16px;
+  font-size: 15px;
+  color: #002b63;
   opacity: 0.85;
+  margin-top: 8px;
 }
 
 /* =============== FEATURE CARDS =============== */
@@ -87,62 +92,55 @@ html, body, #root {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 25px;
+  max-width: 900px;
 }
 
 .feature-card {
   width: 240px;
   padding: 26px;
   background: rgba(255, 255, 255, 0.25);
-  border-radius: 20px;
-  border: 1.5px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  color: white;
-  cursor: pointer;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  color: #002b63;
+  border: 1px solid rgba(255, 255, 255, 0.35);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .feature-card img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 12px;
+  width: 55px;
+  height: 55px;
+  margin-bottom: 10px;
 }
 
 .feature-card h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #fff;
+  color: #002b63;
 }
 
 .feature-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  background: linear-gradient(135deg, #007bff, #6610f2);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.35);
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
 }
 
 /* =============== SIDEBAR =============== */
 .sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 70px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
-  border-right: 1px solid rgba(255, 255, 255, 0.25);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  z-index: 10;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
 }
 
 /* =============== ANIMATION =============== */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -150,31 +148,64 @@ html, body, #root {
   }
 }
 
-/* =============== RESPONSIVE =============== */
-@media (max-width: 768px) {
-  .dashboard-layout {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 80px;
+/* =============== RESPONSIVE DESIGN (Mobile + Tablet) =============== */
+@media (max-width: 992px) {
+  .dashboard-content {
+    padding: 40px 20px;
   }
 
+  .balance-card {
+    padding: 25px;
+  }
+
+  .balance-amount {
+    font-size: 36px;
+  }
+
+  .feature-card {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
   .sidebar {
     display: none;
   }
 
+  .dashboard-layout {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 60px;
+  }
+
   .dashboard-content {
-    width: 95%;
     padding: 30px 20px;
   }
 
   .feature-grid {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
 
   .feature-card {
     width: 100%;
     max-width: 340px;
+  }
+
+  .balance-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .balance-amount {
+    font-size: 28px;
+  }
+
+  .feature-card h3 {
+    font-size: 16px;
   }
 }
