@@ -20,10 +20,9 @@ export default function Sidebar() {
       {/* Desktop Sidebar */}
       <div className="sidebar desktop-sidebar">
         <div className="menu-item" onClick={() => navigate("/dashboard")}>🏠</div>
-        <div className="menu-item" onClick={() => navigate("/deposit")}>➕</div>
-        <div className="menu-item" onClick={() => navigate("/withdraw")}>➖</div>
+        
         <div className="menu-item" onClick={() => navigate("/transactions")}>📄</div>
-        <div className="menu-item" onClick={() => navigate("/transfer")}>💸</div>
+    
         <div className="menu-item" onClick={() => navigate("/profile")}>👤</div>
       </div>
 
@@ -31,9 +30,8 @@ export default function Sidebar() {
       <div className="mobile-navbar">
         <div onClick={() => navigate("/home")}>🏠</div>
        <div onClick ={()=> navigate("/transactions")}>📄</div> 
-        <div onClick={() => navigate("/deposit")}>➕</div>
-        <div onClick={() => navigate("/withdraw")}>➖</div>
-        <div onClick={() => navigate("/transfer")}>💸</div>
+      
+    
         <div onClick={() => navigate("/profile")}>👤</div>
       </div>
     </>
