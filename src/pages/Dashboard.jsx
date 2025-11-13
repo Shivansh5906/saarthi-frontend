@@ -6,6 +6,7 @@ import "./Dashboard.css";
 
 import depositImg from "../assets/deposit.png";
 import withdrawImg from "../assets/withdraw-money.svg"; // ✅ Added withdraw icon
+import transferImg from "../assets/transfer.png";
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
@@ -58,16 +59,11 @@ export default function Dashboard() {
             <img src={withdrawImg} alt="Withdraw" className="feature-icon" />
             <h3>Withdraw Money</h3>
           </div>
+<div className="feature-card" onClick={() => navigate("/transfer")}>
+  <img src={transferImg} alt="Transfer" className="feature-icon" />
+  <h3>Transfer Funds</h3>
+</div>
 
-          {/* TRANSFER BUTTON */}
-          <div className="feature-card" onClick={() => navigate("/transfer")}>
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2980/2980283.png"
-              alt="Transfer"
-              className="feature-icon"
-            />
-            <h3>Transfer Funds</h3>
-          </div>
 
         </div>
       </div>
