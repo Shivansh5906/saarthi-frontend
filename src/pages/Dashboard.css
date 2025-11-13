@@ -123,11 +123,25 @@ html, body, #root {
   color: #002b63;
 }
 
+/* BLUE HOVER (Same as navbar) */
 .feature-card:hover {
   transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(90deg, #003366, #004080);
+  color: white;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
+
+/* Make icon also white-ish on hover */
+.feature-card:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* Text color fix */
+.feature-card:hover h3 {
+  color: white;
+}
+
 
 /* =============== SIDEBAR =============== */
 .sidebar {
