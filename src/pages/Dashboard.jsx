@@ -3,7 +3,9 @@ import api from "../api/apiClient";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import "./Dashboard.css";
+
 import depositImg from "../assets/deposit.png";
+import withdrawImg from "../assets/withdraw-money.svg"; // ✅ Added withdraw icon
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
@@ -26,46 +28,47 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-layout">
-      {/* ✅ Sidebar */}
+      {/* Sidebar */}
       <Sidebar />
 
-      {/* ✅ Blue Navbar */}
+      {/* Blue Navbar */}
       <div className="navbar">
-        <h1>Welcome, {user.name} </h1>
+        <h1>Welcome, {user.name}</h1>
       </div>
 
       <div className="dashboard-content">
-        {/* Glass Balance Card */}
+        {/* Balance Card */}
         <div className="balance-card">
           <div className="balance-label">Total Balance</div>
-          <div className="balance-amount">
-            ₹ {user.balance.toLocaleString()}
-          </div>
+          <div className="balance-amount">₹ {user.balance.toLocaleString()}</div>
           <div className="balance-number">Savings • {user.accountNumber}</div>
         </div>
 
-        {/* Action Buttons */}
+        {/* Feature Buttons */}
         <div className="feature-grid">
+
+          {/* DEPOSIT BUTTON */}
           <div className="feature-card" onClick={() => navigate("/deposit")}>
-            <img src={depositImg} alt="Deposit" />
+            <img src={depositImg} alt="Deposit" className="feature-icon" />
             <h3>Deposit Money</h3>
           </div>
 
+          {/* WITHDRAW BUTTON */}
           <div className="feature-card" onClick={() => navigate("/withdraw")}>
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/833/833472.png"
-              alt="Withdraw"
-            />
-            <h3>Withdraw Cash</h3>
+            <img src={withdrawImg} alt="Withdraw" className="feature-icon" />
+            <h3>Withdraw Money</h3>
           </div>
 
+          {/* TRANSFER BUTTON */}
           <div className="feature-card" onClick={() => navigate("/transfer")}>
             <img
               src="https://cdn-icons-png.flaticon.com/512/2980/2980283.png"
               alt="Transfer"
+              className="feature-icon"
             />
             <h3>Transfer Funds</h3>
           </div>
+
         </div>
       </div>
     </div>
