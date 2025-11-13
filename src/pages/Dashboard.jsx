@@ -34,7 +34,7 @@ export default function Dashboard() {
 
       {/* Blue Navbar */}
       <div className="navbar">
-        <h1>Welcome, {user.name}</h1>
+        <h1>Welcome {user.name}</h1>
       </div>
 
       <div className="dashboard-content">
