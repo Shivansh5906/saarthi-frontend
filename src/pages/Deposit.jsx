@@ -50,9 +50,7 @@ export default function Deposit() {
           </ul>
         </div>
 
-        <div className="nav-right">
-          <button className="logout-btn" onClick={logout}>Logout</button>
-        </div>
+        
 
       </nav>
 
