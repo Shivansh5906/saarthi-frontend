@@ -14,7 +14,7 @@ export default function Home() {
 
       {/* ✅ GLASS TITLE BOX */}
       <div className="home-glass-box">
-        <h1 className="bank-title">🏦 Saarthi Bank</h1>
+        <h1 className="bank-title">🏦 SAARTHI BANK</h1>
         <p className="bank-tagline">Your Trusted Partner in Digital Banking</p>
       </div>
 
