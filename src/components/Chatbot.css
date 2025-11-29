@@ -1,52 +1,104 @@
+/* Floating button style */
+.chat-toggle-btn {
+  position: fixed;
+  top: 85px;          /* NAVBAR ke just niche */
+  right: 25px;
+  background: #007bff;
+  color: white;
+  font-size: 18px;
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;      /* always on top */
+}
+
+/* Chat container box */
 .chat-container{
   position: fixed;
-  bottom: 25px;
+  top: 140px;        /* navbar ke neeche visible */
   right: 25px;
-  width: 300px;
+  width: 320px;
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,.2);
+  border-radius: 14px;
+  box-shadow: 0 0 18px rgba(0,0,0,.25);
   overflow: hidden;
+  z-index: 9999;
+  display: none;      /* start hidden */
 }
 
+/* Show/Hide animation */
+.chat-container.open{
+  display: block;
+  animation: pop .3s ease;
+}
+
+@keyframes pop {
+  from{ transform: scale(0.8); opacity:0; }
+  to{ transform: scale(1); opacity:1; }
+}
+
+/* ChatBody Scrollable */
 .chat-box{
-  height: 260px;
+  height: 280px;
   padding: 10px;
   overflow-y: auto;
+  background: #fafafa;
 }
 
+/* Chat Messages Styling */
 .user-msg{
   text-align: right;
   background:#007bff;
   color:#fff;
-  padding:8px;
-  border-radius:8px;
-  margin:5px;
+  padding:8px 10px;
+  border-radius:10px;
+  margin:6px;
 }
-
 .bot-msg{
   text-align: left;
-  background:#eaeaea;
+  background:#ededed;
   color:#333;
-  padding:8px;
-  border-radius:8px;
-  margin:5px;
+  padding:8px 10px;
+  border-radius:10px;
+  margin:6px;
 }
 
+/* Options Button Container */
 .chat-options{
   display:flex;
   flex-wrap:wrap;
-  gap:5px;
+  gap:6px;
   padding:10px;
-  background:#f9f9f9;
+  background:#fff;
 }
 
 .chat-options button{
   flex:1 1 45%;
   border:none;
-  padding:8px;
-  border-radius:6px;
+  padding:10px;
+  font-size:14px;
+  border-radius:8px;
   cursor:pointer;
   background:#007bff;
   color:#fff;
+  transition:.2s;
+}
+
+.chat-options button:hover{
+  transform: scale(1.05);
+}
+
+/* 📱 Mobile Responsive */
+@media(max-width: 600px){
+  .chat-container{
+    width: 90%;
+    right:5%;
+    left:5%;
+    top: 120px;
+  }
+  .chat-toggle-btn{
+    right:15px;
+    top:80px;
+  }
 }
