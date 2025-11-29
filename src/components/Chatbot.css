@@ -74,16 +74,16 @@
 }
 
 .chat-options button{
-  flex:1 1 45%;
-  border:none;
-  padding:10px;
-  font-size:14px;
-  border-radius:8px;
-  cursor:pointer;
-  background:#007bff;
-  color:#fff;
-  transition:.2s;
+  width: 48%;        /* Buttons equal width */
+  min-width: 135px;  /* Prevent shrinking */
+  flex: none;        /* Disable uneven auto-grow */
+  height: 42px;      /* Same height for all */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
 }
+
 
 .chat-options button:hover{
   transform: scale(1.05);
