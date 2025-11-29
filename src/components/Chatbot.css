@@ -1,105 +1,133 @@
-/* Floating button style */
+/* ========== CHAT TOGGLE BUTTON (NAVBAR KE NICHE) ========== */
 .chat-toggle-btn {
   position: fixed;
-  top: 110px;          /* NAVBAR ke just niche */
-  right: 25px;
+  top: 115px;                   /* Perfect distance from navbar */
+  right: 30px;
   background: #001f4d;
   color: white;
-  font-size: 18px;
-  padding: 12px 18px;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 10px 20px;
   border-radius: 30px;
   border: none;
   cursor: pointer;
-  z-index: 9999;      /* always on top */
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,.25);
+  transition: 0.3s ease;
 }
 
-/* Chat container box */
+.chat-toggle-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+
+/* ========== CHATBOX MAIN POPUP ========== */
 .chat-container{
   position: fixed;
-  top: 140px;        /* navbar ke neeche visible */
-  right: 25px;
-  width: 320px;
+  top: 155px;                  /* Button ke just neeche — perfect flow */
+  right: 30px;
+  width: 330px;
   background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 0 18px rgba(0,0,0,.25);
+  border-radius: 15px;
+  box-shadow: 0 6px 25px rgba(0,0,0,.30);
   overflow: hidden;
   z-index: 9999;
-  display: none;      /* start hidden */
+  display: none;
 }
 
-/* Show/Hide animation */
 .chat-container.open{
   display: block;
-  animation: pop .3s ease;
+  animation: pop .35s ease-out;
 }
 
 @keyframes pop {
-  from{ transform: scale(0.8); opacity:0; }
-  to{ transform: scale(1); opacity:1; }
+  from { transform: scale(.85); opacity:0 }
+  to   { transform: scale(1);   opacity:1 }
 }
 
-/* ChatBody Scrollable */
+
+/* ========== CHAT AREA ========== */
 .chat-box{
-  height: 280px;
-  padding: 10px;
+  height: 285px;
+  padding: 12px;
   overflow-y: auto;
   background: #fafafa;
 }
 
-/* Chat Messages Styling */
+/* User Msg */
 .user-msg{
   text-align: right;
-  background:#007bff;
+  background:#0069ff;
   color:#fff;
-  padding:8px 10px;
-  border-radius:10px;
-  margin:6px;
-}
-.bot-msg{
-  text-align: left;
-  background:#ededed;
-  color:#333;
-  padding:8px 10px;
-  border-radius:10px;
-  margin:6px;
+  padding:8px 11px;
+  border-radius:12px;
+  margin:6px 4px;
 }
 
-/* Options Button Container */
+/* Bot Msg */
+.bot-msg{
+  text-align: left;
+  background:#ececec;
+  color:#222;
+  padding:8px 11px;
+  border-radius:12px;
+  margin:6px 4px;
+}
+
+
+/* ========== BUTTON GRID ========== */
 .chat-options{
   display:flex;
   flex-wrap:wrap;
-  gap:6px;
-  padding:10px;
+  gap:8px;
+  padding:12px;
   background:#fff;
+  border-top:1px solid #eaeaea;
 }
 
 .chat-options button{
-  width: 48%;        /* Buttons equal width */
-  min-width: 135px;  /* Prevent shrinking */
-  flex: none;        /* Disable uneven auto-grow */
-  height: 42px;      /* Same height for all */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 500;
-  background-color: #001f4d;
+  width: 48%;               /* All equal */
+  height: 46px;
+  background:#00214d;
+  color:#fff !important;
+  font-weight:700;
+  border:none;
+  border-radius:12px;       /* More smooth curve */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+  transition:.25s ease;
 }
-
 
 .chat-options button:hover{
-  transform: scale(1.05);
+  transform: scale(1.06);
+  background:#003a87;
 }
 
-/* 📱 Mobile Responsive */
-@media(max-width: 600px){
-  .chat-container{
-    width: 90%;
-    right:5%;
-    left:5%;
-    top: 160px;
-  }
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media(max-width:600px){
+
   .chat-toggle-btn{
-    right:15px;
-    top:120px;
+    top:105px;              /* Mobile mein aur neat */
+    right:18px;
+    font-size:15px;
+    padding:9px 18px;
+  }
+
+  .chat-container{
+    top:150px;
+    width:92%;
+    left:4%;
+    right:4%;
+  }
+
+  .chat-options button{
+    width:100%;             /* One per row — better touch UX */
+    height:50px;
+    border-radius:14px;
   }
 }
