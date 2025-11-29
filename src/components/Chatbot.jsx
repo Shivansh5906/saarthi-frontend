@@ -32,10 +32,10 @@ export default function Chatbot() {
         </div>
 
         <div className="chat-options">
-          <button onClick={()=>sendOption("balance")}>💰 Balance</button>
-          <button onClick={()=>sendOption("transactions")}>📄 Last 5 Transactions</button>
-          <button onClick={()=>sendOption("account details")}>🧾 Account Details</button>
-          <button onClick={()=>sendOption("contact")}>📞 Contact Us</button>
+          <button onClick={()=>sendOption("Balance")}>💰 Balance</button>
+          <button onClick={()=>sendOption("Transactions")}>📄 Last 5 Transactions</button>
+          <button onClick={()=>sendOption("Account Details")}>🧾 Account Details</button>
+          <button onClick={()=>sendOption("Contact")}>📞 Contact Us</button>
         </div>
       </div>
     </>
