@@ -9,14 +9,14 @@ export default function Chatbot() {
     { sender: "bot", text: "Hi, I am Saarthi! 🤖\nHow can I help you today?" }
   ]);
 
-  const sendOption = async (option) => {
-    const res = await axios.post("/chat",{message:option});
-    setMessages([
-      ...messages,
-      { sender:"user", text:option },
-      { sender:"bot", text:res.data.response }
-    ]);
-  };
+ const sendOption = async (option) => {
+  const res = await axios.post("/chat", { message: option });
+
+  setMessages([
+    { sender: "bot", text: res.data.response }   // <-- Only latest response
+  ]);
+};
+
 
   return (
     <>
