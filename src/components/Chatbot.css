@@ -1,7 +1,7 @@
 /* Floating button style */
 .chat-toggle-btn {
   position: fixed;
-  top: 85px;          /* NAVBAR ke just niche */
+  top: 110px;          /* NAVBAR ke just niche */
   right: 25px;
   background: #003399;
   color: white;
