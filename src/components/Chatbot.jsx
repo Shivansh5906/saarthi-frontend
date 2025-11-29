@@ -4,7 +4,10 @@ import "./Chatbot.css";
 
 export default function Chatbot() {
   const [open,setOpen] = useState(false);
-  const [messages, setMessages] = useState([]);
+
+  const [messages, setMessages] = useState([
+    { sender: "bot", text: "Hi, I am Saarthi! 🤖\nHow can I help you today?" }
+  ]);
 
   const sendOption = async (option) => {
     const res = await axios.post("/chat",{message:option});
@@ -17,7 +20,6 @@ export default function Chatbot() {
 
   return (
     <>
-      {/* Floating Button on NAVBAR side */}
       <button className="chat-toggle-btn" onClick={()=>setOpen(!open)}>
         💬 Ask Saarthi
       </button>
