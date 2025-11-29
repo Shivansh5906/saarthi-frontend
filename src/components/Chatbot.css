@@ -3,7 +3,7 @@
   position: fixed;
   top: 110px;          /* NAVBAR ke just niche */
   right: 25px;
-  background: #003399;
+  background: #001f4d;
   color: white;
   font-size: 18px;
   padding: 12px 18px;
@@ -82,7 +82,7 @@
   justify-content: center;
   align-items: center;
   font-weight: 500;
-  background-color: #003399;
+  background-color: #001f4d;
 }
 
 
