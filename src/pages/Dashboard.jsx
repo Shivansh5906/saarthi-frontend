@@ -3,6 +3,9 @@ import api from "../api/apiClient";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import "./Dashboard.css";
+import Chatbot from "../components/Chatbot";
+import "../components/Chatbot.css";
+
 
 import depositImg from "../assets/deposit.png";
 import withdrawImg from "../assets/withdraw-money.svg"; // ✅ Added withdraw icon
@@ -36,7 +39,11 @@ export default function Dashboard() {
       <div className="navbar">
         <h1>Welcome {user.name}</h1>
       </div>
-
+  <div className="dashboard">
+    {/* your existing dashboard code */}
+    
+    <Chatbot />   {/* ← chatbot appears on bottom-right */}
+  </div>
       <div className="dashboard-content">
         {/* Balance Card */}
         <div className="balance-card">
