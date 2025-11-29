@@ -19,7 +19,7 @@ export default function Chatbot() {
     <>
       {/* Floating Button on NAVBAR side */}
       <button className="chat-toggle-btn" onClick={()=>setOpen(!open)}>
-        💬 Chat
+        💬 Ask Saarthi
       </button>
 
       <div className={`chat-container ${open?"open":""}`}>
