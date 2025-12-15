@@ -39,7 +39,7 @@ This project follows modern frontend development practices with a clean UI and r
 
 - 🔐 Secure Login & Registration
 - 💳 Account Balance & Transaction View
-- 🤖 AI Chatbot Integration
+- 🤖 Chatbot Integration
 - 🌍 Cross-Origin API Communication
 - 📱 Responsive UI (Mobile Friendly)
 - ⚡ Fast and Lightweight Frontend
