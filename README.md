@@ -1,16 +1,58 @@
-# React + Vite
+# Saarthi – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Saarthi Frontend is the user interface of the **Saarthi Bank Management System**, a full-stack web application designed to provide a smooth, secure, and user-friendly banking experience.  
+This repository contains the frontend codebase responsible for user interaction, authentication, and communication with the backend APIs.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo
+🔗 https://saarthibank.netlify.app  
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🏗️ Project Overview
 
-## Expanding the ESLint configuration
+The Saarthi Frontend allows users to:
+- Register and log in securely
+- View account details and balance
+- Perform basic banking actions
+- Interact with an AI-powered chatbot
+- Communicate with backend services using REST APIs
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project follows modern frontend development practices with a clean UI and responsive design.
+
+---
+
+## 🛠️ Tech Stack
+
+- **HTML5**
+- **CSS3**
+- **JavaScript (ES6+)**
+- **React.js**
+- **REST API Integration**
+- **JWT Authentication**
+- **Netlify (Deployment)**
+
+---
+
+## ✨ Features
+
+- 🔐 Secure Login & Registration
+- 💳 Account Balance & Transaction View
+- 🤖 AI Chatbot Integration
+- 🌍 Cross-Origin API Communication
+- 📱 Responsive UI (Mobile Friendly)
+- ⚡ Fast and Lightweight Frontend
+
+---
+## 🔑 Demo Login Credentials
+
+You can explore the application using the following demo account:
+
+- **Email:** user123@gmail.com  
+- **Password:** 123456  
+
+> ⚠️ These credentials are for **demo/testing purposes only**.
+
+
+
